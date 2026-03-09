@@ -1,0 +1,45 @@
+class node:
+    def __init__(self, data):
+        self.data = data
+        self.nextAddress = None
+
+class linkedList:
+    def __init__(self):
+        self.head = None
+    
+    def insert(self, value):
+        newNode = node(value)
+        newNode.nextAddress = self.head
+        self.head = newNode
+
+    def displayAllValue(self):
+        temp = self.head
+        while temp != None:
+            print(temp.data, end=" -> ")
+            temp = temp.nextAddress
+        print(None)
+        
+    def findPrimes(self):
+        temp = self.head
+        while temp != None:
+            val = temp.data
+            if val > 1:
+                isPrime = True
+                for i in range(2, val):
+                    if val % i == 0:
+                        isPrime = False
+                        break
+                if isPrime:
+                    print(val, "is prime")
+            temp = temp.nextAddress
+
+
+objLinkedList = linkedList()
+objLinkedList.insert(1)
+objLinkedList.insert(3)
+objLinkedList.insert(4)
+objLinkedList.insert(35)
+objLinkedList.insert(7) 
+objLinkedList.displayAllValue()
+print("Checking for primes:")
+objLinkedList.findPrimes()
