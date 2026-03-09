@@ -1,0 +1,7 @@
+c=lambda x:"greater" if x>0 else "no"
+r=lambda c:"greater" if c>0 else "no"
+print(r(-1))
+
+c=lambda x:"greater" if x>0 else "no"
+r=lambda c:"greater" if c>0 else "no"
+print(r(4))
